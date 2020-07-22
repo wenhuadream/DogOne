@@ -1,0 +1,70 @@
+/* pages/index/index.wxss */
+
+.page-body {
+  justify-content:stretch;
+}
+.log {
+  width: 90%;
+  left: 5%;
+  position: relative;
+  margin-top: 10rpx;
+}
+.scroll-list {
+  max-height:max-content;
+}
+
+.scan-view {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  bottom: 0%;
+  margin-bottom: 0;
+}
+.scan-view button {
+position:fixed;
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:10%;
+padding-left:14px;
+padding-right:14px;
+box-sizing:border-box;
+font-size:18px;
+width: 90%;
+bottom: 0%;
+}
+
+.devices_summary {
+  margin-top:5px;
+  padding: 10px 5%;
+  font-size: 16px;
+}
+.device_list {
+  /* height: 1000rpx;*/
+  height: 70vh;
+  /* max-height是在height已经占位的情况下的百分比 */
+  max-height: 100%;
+  margin: 50px 5%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  width: auto;
+}
+.device_item {
+  border-bottom: 1px solid #EEE;
+  padding: 10px;
+  color: #666;
+}
+.device_item_hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+.about-img {
+  position: fixed;
+  width:  70rpx;
+  height: 70rpx;
+  top: 20rpx;
+  right: 30rpx;
+}

@@ -1,0 +1,40 @@
+<!--pages/funtionPage/funtionPage.wxml-->
+
+<view class='bluetooth-detail'>
+  <view>设备名：</view>
+  <view>{{name}}</view>
+</view>
+<!-- 日期 -->
+<view class='card'>
+  <view> <text class="date-text">{{date}}</text></view>
+</view>
+<!-- 时间 -->
+<view class='card'>
+  <view><text class="date-text">{{time}}</text></view>
+</view>
+
+<!-- 复选框 -->
+<view class='card'>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" >
+      PAL<radio value="" checked="true"/>
+    </label>
+    <label class="radio" >
+      NTSC<radio value="" checked=""/>
+    </label>
+  </radio-group>
+</view>
+
+
+
+<!-- 底部按钮 -->
+<view class='function-button-div'>
+  <view class="function-button-div2">
+     <button type="primary" class='function-button_left' bindtap="findDevice">查找设备</button>
+     <button type="primary" class='function-button_right' bindtap="goFunctionPage">调试模式</button>
+  </view>
+</view>
+
+ <view class="function-button-send">
+    <button type="primary" class='function-button' bindtap="sentOrder">发送设置</button>
+</view>

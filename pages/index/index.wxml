@@ -1,0 +1,31 @@
+<!--pages/index/index.wxml-->
+
+<!--WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。-->
+<wxs module="utils">
+  module.exports.max = function(n1, n2) {
+    return Math.max(n1, n2)
+  }
+  module.exports.len = function(arr) {
+    arr = arr || []
+    return arr.length
+  }
+</wxs>
+
+<view class='page-body'>
+  <view class="devices_summary">已发现 {{devices.length}} 个外围设备：  <image class='about-img' src='/images/about.png' bindtap='aboutClick'></image></view>
+ 
+  <scroll-view class="device_list" scroll-y scroll-with-animation>
+    <view wx:for="{{devices}}" wx:key="index" data-device-id="{{item.deviceId}}" data-name="{{item.name || item.localName}}" bindtap="createBLEConnection" class="device_item" hover-class="device_item_hover">
+      <view style="font-size: 16px; color: #333;">{{item.name}}</view>
+      <view style="font-size: 10px">信号强度: {{item.RSSI}}dBm ({{utils.max(0, item.RSSI + 100)}}%)</view>
+      <view style="font-size: 10px">UUID: {{item.deviceId}}</view>
+      <view style="font-size: 10px">Service数量: {{utils.len(item.advertisServiceUUIDs)}}</view>
+    </view>
+  </scroll-view>
+
+  <view class='scan-view'>
+    <button type="primary" bindtap="startScan">刷新蓝牙列表</button>
+  </view>
+
+  
+</view>

@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/settingPage/settingPage",
+    "pages/functionPage/functionPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#179B16",
+    "navigationBarTitleText": "DogOne",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F8F8F8"
+  },
+  "sitemapLocation": "sitemap.json"
+}
