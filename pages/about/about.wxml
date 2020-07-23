@@ -1,14 +1,17 @@
-<!--关于-->
+<!--关于  20200718修改了校时可能相差1秒的BUG，始终不能刷新蓝牙设备的BUG，时间码发生器连接后退出无法再次蓝牙连接的BUG。
+          20200721修改了有时候蓝牙设备始终不能搜索出来的状态，尝试先关闭再开启蓝牙适配器
+          -->
 <view class='page-body'>
   <scroll-view scroll-y="true" class="scroll-view">
     <view class='about'>
      <image class='logo-image' src='/images/logo.png' ></image>
-      <text decode="{{true}}">DogOne小程序是DogOne时间码发生器的同步设置软件。\n\r</text>
-      <text decode="{{true}}">相关调试设置命令如下：\n\r</text>
+     <text decode="{{true}}">DogOne时间码发生器蓝牙校时小程序 V1.1.3 20200721\n\r</text>
+     <text decode="{{true}}">DogOne小程序是DogOne时间码发生器的同步设置软件。\n\r</text>
+     <text decode="{{true}}">相关调试设置命令如下：\n\r</text>
       <text decode="{{true}}">1:更改名字。SetNameXXX。eg:SetNameTimeCode01\n\r</text>
       <text decode="{{true}}">2:设置模式。SetModePAL  SetModeNTSC  SetMode24\n\r</text>
-      <text decode="{{true}}">3:设置日期。SetDate20070305\n\r</text>
-      <text decode="{{true}}">4:设置事件。SetTime104000\n\r</text>
+      <text decode="{{true}}">3:设置日期。SetDate20070305(YYMMDDWW年月日星期各2位)\n\r</text>
+      <text decode="{{true}}">4:设置事件。SetTime104000(时分秒各2位)\n\r</text>
       <text decode="{{true}}">5:查找设备。SearchIt\n\r</text>
       <text decode="{{true}}">6:微调。SetSlow00，SetFast00 （数字是每24小时相差10ms乘以数值）\n\r</text>
     </view>

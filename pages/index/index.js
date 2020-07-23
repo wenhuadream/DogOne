@@ -127,6 +127,7 @@ Page({
     if (that.data.isopen) { //如果已初始化小程序蓝牙模块，则直接执行扫描
       that.getBluetoothAdapterState();
     } else {
+      that.closeBluetoothAdapter();      //尝试先关闭再开启蓝牙20200721
       that.openBluetoothAdapter();//也会调用getBluetoothAdapterState函数，只是先执行打开
     }
   },
@@ -144,10 +145,11 @@ Page({
         that.getBluetoothAdapterState();
       },
       fail: function(err) {
-        isopen: true;//如果已经打开
+        //isopen: true;//如果已经打开
         app.showModal1("蓝牙开关未开启");
         var log = that.data.textLog + "蓝牙开关未开启 \n";
         that.setData({
+          isopen: false,  //如果已经打开 20200718修改了BUG，蓝牙不能开启后关闭isopen      这句话原来的位置没有放对，调整过了。
           textLog: log
         });
       }

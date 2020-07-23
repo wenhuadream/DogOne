@@ -32,7 +32,7 @@
 .com{
   width: 90%;
 	position: absolute;
-  bottom: 5%;
+  bottom: 3%;
   font-size: 30rpx;
   display: flex;
   align-items: center;

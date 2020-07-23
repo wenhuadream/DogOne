@@ -69,6 +69,18 @@ Page({
 
   },
 
+  /**
+   * 生命周期函数--监听页面卸载 在这里增加了退出后关闭蓝牙功能
+   */
+  onUnload: function () {   //20200718修改了BUG，退出后要关闭蓝牙连接，否则后面不能搜索到这个设备
+    this.closeBLEConnection();
+  },
+
+
+
+
+
+
     //退出页面
   backPage: function() {//无操作
     closeBLEConnection;
@@ -215,13 +227,13 @@ Page({
 
     //设置时间
     setTimeout(function () {//延时执行，
-      var nowTime = new Date();//现在时间
+      //var nowTime = new Date();//现在时间
 
       var sendtime = setInterval(function(){
-          nowTime = new Date();
-         if((1000-parseInt(utils.getMilliseconds(nowTime))) ==1000 ){
+         // nowTime = new Date();
+         if((parseInt(utils.getMilliseconds(new Date()))) < 5 ){       // 20200718修改了BUG， 重要语句 这里的时间小于5ms校时，也可以设置更小的值  
              clearInterval(sendtime);//先关闭定时器
-             orderStr =  "SetTime"+utils.formatTime(nowTime);//去除年份前面的两位
+             orderStr =  "SetTime"+utils.formatTime(new Date());//去除年份前面的两位
              console.log(orderStr);
              order = utils.stringToBytes(orderStr);
              that.writeBLECharacteristicValue(order);

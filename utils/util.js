@@ -88,7 +88,7 @@ function formatDateToView(date) {
   var year = date.getFullYear()//获取完整的年份(4位,1970-????)  date.getYear();//获取当前年份(2位)
   var month = date.getMonth() + 1//获取当前月份(0-11,0代表1月)（）
   var day = date.getDate()//获取当前日(1-31)
-  return [year, month, day].map(formatNumber).join('/')
+  return [year, month, day].map(formatNumber).join('-')
 }
 /*获取时间，带分隔，单给显示*/
 function formaotTimeToView(date, divide) {

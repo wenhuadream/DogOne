@@ -10,7 +10,7 @@
 </view>
 <!-- 时间 -->
 <view class='card'>
-  <view><text class="date-text">{{time}}</text></view>
+  <view> <text class="date-text">{{time}}</text></view>
 </view>
 
 <!-- 复选框 -->

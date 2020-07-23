@@ -16,12 +16,14 @@
   display: flex;
   justify-content: center;
 }
-/*字体颜色设置*/
-.date-text {
+/*字体颜色设置font-family: "Courier New", Courier, monospace;*/
+  .date-text {
   font-family: "Courier New", Courier, monospace;
   font-size: 100rpx;
+  font-weight: bold;
   color: rgb(19, 4, 84);
   }
+
 .list {
   max-height: 45vh;
 }
